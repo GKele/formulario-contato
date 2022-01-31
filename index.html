@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+    <title>Formulário de Contato</title>
+</head>
+
+<body>
+    <div class="div-principal">
+        <h1 id="titulo">Peça o seu orçamento agora mesmo!</h1>
+        
+        <form method="" id="formulario" class="form">
+            <div class="form-direito">
+                <div class="">
+                    <input type="text" name="nome" id="nome" placeholder="Nome" required="required"/>
+                </div>
+                <div class="">
+                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required="required"/>
+                </div>
+            </div>
+
+            <div class="form-esquerdo">
+                <div class="">
+                    <input type="email" name="email" id="email" placeholder="E-mail" required="required"/>
+                </div>
+                <div class="">
+                    <select name="servico" id="servico" required="required">
+                        <option selected disable value="">Escolha o serviço que deseja</option>
+                        <option>Serviço 1</option>
+                        <option>Serviço 2</option>
+                </div>
+            </div>
+
+            <fieldset class="form-total">
+                <div>
+                    <textarea name="mensagem" id="mensagem" placeholder="Mensagem" required="required" ></textarea>
+                </div>
+            </fieldset>
+
+            <button class="botao" onclick="validar()">Enviar</button>
+        </form>    
+    </div>
+
+    <!--Validando o formulário com JavaScript-->
+    <script language="javascript" type="text/javascript">
+        function validar() {
+        var nome = formulario.nome.value;
+        var telefone = formulario.telefone.value;
+        var email = formulario.email.value;
+        var servico = formulario.servico.value;
+        var mensagem = formulario.mensagem.value;
+
+        if (nome == "") {
+        alert('Campo nome vazio.')
+        return false;
+        }
+        if (telefone == "") {
+        alert('Campo Telefone vazio.')
+        return false;
+        }
+        if (email == "") {
+        alert('Campo E-mail vazio.')
+        return false;
+        }
+        if (servico == "") {
+        alert('Opção de serviço não foi selecionada.')
+        return false;
+        }
+        if (mensagem == "") {
+        alert('Campo mensagem vazio.')
+        return false;
+        }
+        else {
+            alert('Formulário enviado com sucesso!')
+            return true;
+        }
+    }
+    </script>
+</body>
+</html>
